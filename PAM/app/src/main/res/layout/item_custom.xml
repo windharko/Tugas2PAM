@@ -10,6 +10,7 @@
     android:layout_marginEnd="8dp">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/skillCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
@@ -20,7 +21,7 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/imageSkill"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:src="@drawable/javascript_logo"
@@ -29,7 +30,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/textSkill"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Javascript"
@@ -37,7 +38,7 @@
                 android:textSize="30dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintStart_toEndOf="@+id/imageSkill"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
