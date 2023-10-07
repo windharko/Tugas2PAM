@@ -28,7 +28,7 @@ class SkillFragment: Fragment() {
         _binding = FragmentSkillBinding.inflate(inflater, container, false)
         val root: View = binding.root
         val recyclerView = binding.recyclerView
-        val adapter = SkillAdapter{
+        val adapter = SkillAdapter(this){
             navigateToDetail(it)
         }
         recyclerView.layoutManager = LinearLayoutManager(requireContext())

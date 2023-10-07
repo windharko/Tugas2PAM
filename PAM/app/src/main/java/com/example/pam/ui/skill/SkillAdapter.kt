@@ -4,12 +4,17 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.pamsearch.databinding.ItemCustomBinding
 import com.example.pamsearch.R
+import com.example.pamsearch.ui.helper.SkillUtil
 
-class SkillAdapter(val listener: (string: String) -> Unit) :
+class SkillAdapter(private val fragment: Fragment, val listener: (string: String) -> Unit) :
     RecyclerView.Adapter<SkillAdapter.ViewHolder>(),Filterable {
+
+    private val skillDataList = SkillUtil.getSkillData(fragment)
+    private var filteredSkills: List<SkillData> = skillDataList
 
     inner class ViewHolder(private val binding: ItemCustomBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -21,22 +26,6 @@ class SkillAdapter(val listener: (string: String) -> Unit) :
             }
         }
     }
-
-    private val skills = listOf(
-        SkillData("Javascript", R.drawable.javascript_logo),
-        SkillData("C++", R.drawable.cpp_logo),
-        SkillData("PHP", R.drawable.php_logo),
-        SkillData("Python", R.drawable.python_logo),
-        SkillData("Javascript", R.drawable.javascript_logo),
-        SkillData("C++", R.drawable.cpp_logo),
-        SkillData("PHP", R.drawable.php_logo),
-        SkillData("Python", R.drawable.python_logo),
-        SkillData("Javascript", R.drawable.javascript_logo),
-        SkillData("C++", R.drawable.cpp_logo),
-        SkillData("PHP", R.drawable.php_logo),
-        SkillData("Python", R.drawable.python_logo)
-    )
-    private var filteredSkills:List<SkillData> = skills
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -57,9 +46,9 @@ class SkillAdapter(val listener: (string: String) -> Unit) :
             override fun performFiltering(constraint: CharSequence?): FilterResults {
                 val searchText = constraint.toString().toLowerCase()
                 filteredSkills = if (searchText.isEmpty()) {
-                    skills // Show all items if the search query is empty
+                    skillDataList
                 } else {
-                    skills.filter { it.name.toLowerCase().contains(searchText) }
+                    skillDataList.filter { it.name.toLowerCase().contains(searchText) }
                 }
                 val results = FilterResults()
                 results.values = filteredSkills

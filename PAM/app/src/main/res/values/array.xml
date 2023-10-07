@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="integer_skill_array">
+        <item>@drawable/javascript_logo</item>
+        <item>@drawable/cpp_logo</item>
+        <item>@drawable/php_logo</item>
+        <item>@drawable/python_logo</item>
+        <item>@drawable/javascript_logo</item>
+        <item>@drawable/cpp_logo</item>
+        <item>@drawable/php_logo</item>
+        <item>@drawable/python_logo</item>
+        <item>@drawable/javascript_logo</item>
+        <item>@drawable/cpp_logo</item>
+        <item>@drawable/php_logo</item>
+        <item>@drawable/python_logo</item>
+    </integer-array>
+    <string-array name="string_skill_array">
+        <item>@string/javascript</item>
+        <item>@string/cpp</item>
+        <item>@string/php</item>
+        <item>@string/python</item>
+        <item>@string/javascript</item>
+        <item>@string/cpp</item>
+        <item>@string/php</item>
+        <item>@string/python</item>
+        <item>@string/javascript</item>
+        <item>@string/cpp</item>
+        <item>@string/php</item>
+        <item>@string/python</item>
+    </string-array>
+</resources>
